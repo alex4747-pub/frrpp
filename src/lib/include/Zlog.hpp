@@ -1,8 +1,8 @@
 // Zlog C++ definitions
 // Copyright (C) 2021 Aleksey Romanov
 //
-#ifndef _ZEBRA_ZLOG_HPP
-#define _ZEBRA_ZLOG_HPP
+#ifndef SRC_LIB_INCLUDE_ZLOG_HPP_
+#define SRC_LIB_INCLUDE_ZLOG_HPP_
 
 namespace frr_pp {
 
@@ -13,7 +13,6 @@ class Zlog {
   static void Rotate();
 };
 
-}  // namepsace frr_pp
+}  // namespace frr_pp
 
-#endif  //  _ZEBRA_ZLOG_HPP
-
+#endif  // SRC_LIB_INCLUDE_ZLOG_HPP_

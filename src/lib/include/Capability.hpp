@@ -1,14 +1,14 @@
 // Capabilities C++ definitions
 // Copyright (C) 2021 Aleksey Romanov
 //
-#ifndef _ZEBRA_CAPS_HPP
-#define _ZEBRA_CAPS_HPP
+#ifndef SRC_LIB_INCLUDE_CAPABILITY_HPP_
+#define SRC_LIB_INCLUDE_CAPABILITY_HPP_
 
 namespace frr_pp {
 
 // Set of c++ aliases for zebra
 // capabilities
-enum class Capability: int {
+enum class Capability : int {
   kSetid,
   kBind,
   kNetAdmin,
@@ -24,7 +24,6 @@ enum class Capability: int {
   kMax = kIpcLock
 };
 
-}  // namepsace frr_pp
+}  // namespace frr_pp
 
-#endif  //  _ZEBRA_CPAS_HPP
-
+#endif  // SRC_LIB_INCLUDE_CAPABILITY_HPP_

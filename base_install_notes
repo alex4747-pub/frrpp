@@ -1,4 +1,5 @@
-Minimal notes
+Minimal notes to checkout and build frr
+and its prerequisites
 
 ==============
 Packages:
@@ -19,13 +20,16 @@ sudo python2 ./get-pip.py
 # And verify the installation
 pip2 --version
 
+================================
+Create base-frr directory for components
+
 =====================
 Libpcre:
 
 1. Downoload pcre2-10.37.tar.bz2 as
    wget https://ftp.pcre.org/pub/pcre/pcre2-10.37.tar.bz2
 
-2. Unpack
+2. Unpack into bae-frr/pcre2-10.37
 
 3. Build and install
 
@@ -41,6 +45,7 @@ sudo ldconfig
 Libyang:
 
 1. Clone from source git clone https://github.com/CESNET/libyang.git
+   in base-frr
 
 2. Build
 
@@ -62,7 +67,7 @@ sudo usermod -a -G frrvty frr
 
 =========================
 Clone FRR release
-git clone --branch=stable/7.5 https://github.com/FRRouting/frr.git
+git clone https://github.com/FRRouting/frr.git
 
 cd frr
 sh ./bootstrap.sh
@@ -88,5 +93,10 @@ sh ./bootstrap.sh
     --with-pkg-git-version \
     --with-pkg-extra-version=-MyOwnFRRVersion
 make
+
+At the curent stag of development there is no point
+to install frr. So skip the following commands
+for now.
+
 sudo make install
 sudo ldconfig

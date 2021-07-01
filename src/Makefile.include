@@ -1,0 +1,37 @@
+# Location of the base frr
+BASE_FRR=$(TOP)/base-frr/frr
+
+# Definitions
+BASE_DEFS = \
+	-DHAVE_CONFIG
+
+# Base flags
+BASE_CFLAGS = -g -O0 -std=gnu11 $(BASE_DEFS) \
+	-I. -I$(TOP)/src/cshim/include \
+	-I$(BASE_FRR) -I$(BASE_FRR)/lib \
+	-Wall -Wextra -Werror
+
+# Note: so far we include base frr .h files
+# into .cpp files (and maybe  even in .hpp files)
+# so we have to compile with gnu extensions.
+BASE_CXXFLAGS = -g -O0 -std=gnu++17 $(BASE_DEFS) \
+	-I.  -I$(TOP)/src/lib/include -I$(TOP)/src/cshim/include \
+	-I$(BASE_FRR) -I$(BASE_FRR)/lib \
+	-Wall -Wextra -Werror
+
+USE_GCC=yes
+
+ifeq ($(USE_GCC),)
+CC = clang
+CXX = clang++
+LIBS = -lc++
+else
+CC = gcc
+CXX = g++
+LIBS = -lstdc++
+endif
+
+FORMAT  = clang-format
+STYLE  = --style="{BasedOnStyle: google, SortIncludes: false}"
+TIDY    = clang-tidy
+CPPLINT = cpplint
