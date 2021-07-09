@@ -5,7 +5,7 @@
 
 #include <csignal>
 
-#include <Yang.hpp>
+#include <Northbound.hpp>
 #include <Zlog.hpp>
 
 namespace frr_pp {
@@ -14,9 +14,10 @@ RipngInfo::RipngInfo(Daemon* daemon) noexcept
     : Daemon::Info(daemon),
       caps_{Capability::kNetRaw, Capability::kBind, Capability::kSysAdmin},
       signals_{SIGHUP, SIGUSR1, SIGINT, SIGTERM},
-      yang_modules_{Yang::GetFilterModule(), Yang::GetInterfaceModule(),
-                    // Put local module here
-                    Yang::GetRouteMapModule(), Yang::GetVrfModule()} {}
+      yang_modules_{
+          Northbound::GetFilterModule(), Northbound::GetInterfaceModule(),
+          // Put local module here
+          Northbound::GetRouteMapModule(), Northbound::GetVrfModule()} {}
 
 std::vector<Capability> const& RipngInfo::GetCapabilities() const noexcept {
   return caps_;

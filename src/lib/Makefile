@@ -6,15 +6,15 @@ CXXFLAGS = $(BASE_CXXFLAGS)
 
 SRCS = \
 	DaemonInfo.cpp \
-	Yang.cpp
+	Northbound.cpp
 
 INCS = \
 	include/Capability.hpp \
 	include/Daemon.hpp \
 	include/DaemonInfo.hpp \
+	include/Northbound.hpp \
 	include/PpTypes.hpp  \
 	include/Vrf.hpp  \
-	include/Yang.hpp \
 	include/Zlog.hpp
 
 OBJS = $(patsubst %.cpp, %.o, $(SRCS))
@@ -34,5 +34,7 @@ cpplint:
 	$(CPPLINT) $(SRCS) $(INCS)
 
 clean:
-	rm -rf *~ *.dSYM *.o
+	rm -f *~ *.dSYM *.o
+	rm -f include/*~
+
 

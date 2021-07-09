@@ -1,16 +1,15 @@
-// C++ interface to yang
-//
+// Northbound c++ wrapper
 // Copyright (C) 2021 Aleksey Romanov
 //
-#ifndef SRC_LIB_INCLUDE_YANG_HPP_
-#define SRC_LIB_INCLUDE_YANG_HPP_
+#ifndef SRC_LIB_INCLUDE_NORTHBOUND_HPP_
+#define SRC_LIB_INCLUDE_NORTHBOUND_HPP_
 
 #include <map>
 #include <PpTypes.hpp>
 
 namespace frr_pp {
 
-class Yang {
+class Northbound {
  public:
   static YangModuleInfo const* GetFilterModule();
   static YangModuleInfo const* GetInterfaceModule();
@@ -21,4 +20,4 @@ class Yang {
 
 }  // namespace frr_pp
 
-#endif  // SRC_LIB_INCLUDE_YANG_HPP_
+#endif  // SRC_LIB_INCLUDE_NORTHBOUND_HPP_

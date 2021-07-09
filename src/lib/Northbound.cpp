@@ -1,8 +1,7 @@
-// Registry of global yang modules
-//
+// Northbound c++ wrapper
 // Copyright (C) 2021 Aleksey Romanov
 //
-#include <Yang.hpp>
+#include <Northbound.hpp>
 #include <config.h>
 #include <northbound.h>
 
@@ -16,14 +15,18 @@ extern const struct frr_yang_module_info frr_vrf_info;
 
 namespace frr_pp {
 
-YangModuleInfo const* Yang::GetFilterModule() { return &::frr_filter_info; }
-YangModuleInfo const* Yang::GetInterfaceModule() {
+YangModuleInfo const* Northbound::GetFilterModule() {
+  return &::frr_filter_info;
+}
+YangModuleInfo const* Northbound::GetInterfaceModule() {
   return &::frr_interface_info;
 }
-YangModuleInfo const* Yang::GetRouteMapModule() {
+YangModuleInfo const* Northbound::GetRouteMapModule() {
   return &::frr_route_map_info;
 }
-YangModuleInfo const* Yang::GetRoutingModule() { return &::frr_routing_info; }
-YangModuleInfo const* Yang::GetVrfModule() { return &::frr_vrf_info; }
+YangModuleInfo const* Northbound::GetRoutingModule() {
+  return &::frr_routing_info;
+}
+YangModuleInfo const* Northbound::GetVrfModule() { return &::frr_vrf_info; }
 
 }  // namespace frr_pp

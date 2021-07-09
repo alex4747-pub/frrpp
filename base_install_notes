@@ -94,9 +94,8 @@ sh ./bootstrap.sh
     --with-pkg-extra-version=-MyOwnFRRVersion
 make
 
-At the curent stag of development there is no point
-to install frr. So skip the following commands
-for now.
+At the current stage of the development there is no point
+to install frr. So skip the following commands for now.
 
 sudo make install
 sudo ldconfig
